@@ -1,0 +1,11 @@
+<input {{on "input" this.inputHandler}} type="text" value={{this.curValue}}>
+<button {{on "click" this.addTodo}}>Submit</button>
+<ul>
+  {{#each this.todos as |todo|}}
+  <li class={{if todo.completed 'completed'}} id={{todo.id}}>
+    <input {{on "change" (fn this.toggleCompleted todo) }} checked={{todo.completed}} type="checkbox">
+    <span>{{todo.title}}</span>
+  </li>
+  {{/each}}
+</ul>
+{{yield}}
