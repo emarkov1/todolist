@@ -5,5 +5,5 @@ interface AddTodoArgs {}
 
 export default class AddTodo extends Component<AddTodoArgs> {
   @tracked
-  curValue: string = "";
+  myValue: string = "";
 }
